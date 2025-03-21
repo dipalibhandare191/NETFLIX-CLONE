@@ -17,7 +17,7 @@ body{
 }
 
 .backgroundContainer{
-    background-image: url("./bannerImage.jpg");
+    background-image: url("./netflix bg image.jpg");
     filter: blur(16px);
     height: 100vh;
     position: relative;
@@ -92,6 +92,7 @@ nav{
     border: none;
     margin-left: 10px;
     font-size: 1rem;
+    color: black;
 
 }
 
@@ -196,7 +197,7 @@ nav{
 }
 
 .emailInputBox::placeholder{
-    color: white;
+    color: gray;
 }
 
 .getStartedButton{

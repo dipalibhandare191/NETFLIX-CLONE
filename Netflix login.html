@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Login</title>
+    <link rel="stylesheet" href="Netflix login.css">
+</head>
+<body>
+    <div class="background">
+        <div class="overlay"></div>
+        <div class="SigInContainer">
+            <form id="loginForm">
+                <h2>Sign In</h2>
+                <input type="email" id="email" placeholder="Email or phone number" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="signin-button">Sign In</button>
+                
+                <div class="remember-container">
+                    <div class="remember-me">
+                        <input class="checkbox" type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                </div>
+                
+                <div class="signup">
+                    <p>New to Netflix?</p>
+                    <a href="Netflix.html">Sign up now</a>
+                </div>
+                <p class="small-text">This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url("./netflix bg image.jpg");
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .SigInContainer {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 40px;
+            width: 350px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            margin: 10rem auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #333;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .signin-button {
+            width: 100%;
+            padding: 12px;
+            background: #e50914;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .signin-button:hover {
+            background: #b20710;
+        }
+
+        .remember-container {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 4rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .checkbox {
+            margin-right: 5px;
+        }
+
+        .signup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .signup p{
+    
+    font-size: 14px;
+    color: #b3b3b3;
+    display: flex;
+        }
+
+        .signup a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .signup a:hover {
+            text-decoration: underline;
+        }
+
+        .small-text {
+            font-size: 12px;
+            color: #737373;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            
+            if (email && password) {
+                localStorage.setItem("user", email);
+                alert("Login Successful! Redirecting...");
+                window.location.href = "Netflix.html";
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>
